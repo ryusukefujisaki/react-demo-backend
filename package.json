@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "react-demo-backend-app",
   "scripts": {
-    "dev": "nodemon --legacy-watch index.ts"
+    "dev": "ts-node-dev --poll index.ts"
   },
   "author": "",
   "license": "ISC",
@@ -13,8 +13,7 @@
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/node": "^18.16.0",
-    "nodemon": "^2.0.22",
-    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.0.4"
   }
 }
