@@ -9,7 +9,8 @@ COPY . $APP_ROOT
 WORKDIR $APP_ROOT
 
 RUN npm install -g npm
+RUN npm install -g db-migrate db-migrate-pg
 
 RUN npm install
 
-CMD ["npm", "run", "dev"]
+CMD bash -c "db-migrate up && npm run dev"
