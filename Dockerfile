@@ -9,6 +9,7 @@ COPY . $APP_ROOT
 WORKDIR $APP_ROOT
 
 RUN npm install -g npm
+RUN npm install -g db-migrate
 
 RUN npm install
 
