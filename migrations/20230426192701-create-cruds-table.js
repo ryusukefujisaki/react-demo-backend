@@ -18,8 +18,8 @@ exports.up = function(db) {
   return db.createTable('cruds', {
     id: { type: type.INTEGER, primaryKey: true, autoIncrement: true },
     value: { type: type.STRING, length: 255 },
-    created_at: { type: type.TIMESTAMP, notNull: true },
-    updated_at: { type: type.TIMESTAMP, notNull: true }
+    created_at: { type: type.TIMESTAMP + '(0)', notNull: true },
+    updated_at: { type: type.TIMESTAMP + '(0)', notNull: true }
   });
 };
 
