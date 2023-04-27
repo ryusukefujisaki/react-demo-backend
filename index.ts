@@ -32,6 +32,14 @@ app.route('/cruds')
       })
   })
 app.route('/cruds/:id')
+  .patch((req: Request, res: Response) => {
+    db.query(
+      'UPDATE cruds SET value = $1, updated_at = now() WHERE id = $2',
+      [req.body.value, req.params.id]
+    ).then(() => {
+      res.end()
+    })
+  })
   .delete((req: Request, res: Response) => {
     db.query(
       'DELETE FROM cruds WHERE id = $1',
