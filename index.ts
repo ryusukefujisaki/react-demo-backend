@@ -31,5 +31,14 @@ app.route('/cruds')
         res.send(data)
       })
   })
+app.route('/cruds/:id')
+  .delete((req: Request, res: Response) => {
+    db.query(
+      'DELETE FROM cruds WHERE id = $1',
+      [req.params.id]
+    ).then(() => {
+      res.end()
+    })
+  })
 
 app.listen(port)
