@@ -26,7 +26,7 @@ app.route('/cruds')
     })
   })
   .get((req: Request, res: Response) => {
-    db.any('SELECT * FROM cruds')
+    db.any('SELECT * FROM cruds ORDER BY id')
       .then((data: any) => {
         res.send(data)
       })
