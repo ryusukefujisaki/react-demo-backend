@@ -6,6 +6,14 @@ const env: any = process.env
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
+const cors = require('cors')
+let origin = 'http://' + env.FRONTEND_HOST
+if (env.FRONTEND_PORT) {
+  origin = origin + ':' + env.FRONTEND_PORT
+}
+const corsOptions = { origin: origin }
+app.use(cors(corsOptions))
+
 const pgp = require('pg-promise')()
 const cn = {
   host: env.POSTGRES_HOST,
